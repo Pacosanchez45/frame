@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Compra de entradas</title>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">   
+  <!-- OTROS LINKS -->
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="film-strip d-flex justify-content-between align-items-center px-3 py-2 position-relative">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/FRAME.logo.svg" alt="Inicio" class="icono-inicio">
+      </a>
+    </div>
+
+      <!-- MENÚ HORIZONTAL VISIBLE EN PANTALLAS GRANDES -->
+      <ul class="menu-desktop d-none d-lg-flex gap-4 m-0 p-0 list-unstyled">
+        <li><a href="peliculas.html" class="nav-link text-uppercase text-white">Películas</a></li>
+        <li><a href="contacto.html" class="nav-link text-uppercase text-white">Contacto</a></li>
+        <li><a href="compra.html" class="nav-link text-uppercase text-white">Tienda</a></li>
+      </ul>
+
+    <!-- CENTRO: icono menú -->
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <div class="icono-menu d-md-none" onclick="toggleMenu()">
+        <img src="img/film__icon.svg" alt="Menú" class="icono-cinta">
+      </div>
+    </div>
+
+    <!-- DERECHA: lupa -->
+    <div class="icono-buscar">
+      <i class="bi bi-search"></i>
+    </div>
+  </header>
+
+
+  <!-- MENÚ DESPEGABLE -->
+
+  <!-- MENÚ DESPLEGABLE -->
+  <nav id="menuDesplegable" class="menu-desplegable d-lg-none">
+    <ul class="list-unstyled text-center m-0 p-0">
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="peliculas.html">PELÍCULAS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a href="compra.html">TIENDA</a></li>
+    </ul>
+  </nav>
+
+    <!-- COMPRA ENTRADAS -->
+  <div class="page-wrapper">
+    <section class="compra-section py-5">
+      <div class="container">
+          <div class="compra-card mx-auto p-4">
+          <h2 class="titulo-compra text-center mb-4">COMPRA DE ENTRADAS</h2>
+
+          <div class="form-group mb-4">
+            <label for="cantidad" class="compra-label">NÚMERO DE ENTRADAS:</label>
+            <div class="d-flex justify-content-between align-items-center w-100 gap-2">
+              <button class="btn btn-compra flex-grow-1" onclick="modificarCantidad(-1)">-</button>
+              
+              <input type="number" id="cantidad" value="1" min="1"
+                    class="form-control text-center cantidad-input flex-grow-2" readonly>
+
+              <button class="btn btn-compra flex-grow-1" onclick="modificarCantidad(1)">+</button>
+            </div>
+          </div>
+
+          <div class="form-group mb-3">
+            <label for="fecha" class="compra-label">DÍA:</label>
+            <div class="select-wrapper">
+              <input type="date" id="fecha" class="custom-date-icono" />
+            </div>
+          </div>
+
+          <!-- PELÍCULA -->
+          <div class="form-group mb-3">
+            <label for="pelicula" class="compra-label">PELÍCULA:</label>
+            <div class="select-wrapper w-100">
+              <select id="pelicula" class="custom-select form-control w-100">
+                <option>ZODIAC</option>
+                <option>PSICOSIS</option>
+                <option>SEVEN</option>
+                <option>MEMENTO</option>
+                <option>TAXI DRIVER</option>
+                <option>ORIGEN</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- HORA -->
+          <div class="form-group mb-4">
+            <label for="hora" class="compra-label">HORA:</label>
+            <div class="select-wrapper w-100">
+              <select id="hora" class="custom-select form-control w-100">
+                <option>15:00</option>
+                <option>18:00</option>
+                <option>20:30</option>
+              </select>
+            </div>
+          </div>
+          <div class="px3">
+            <a href="datospago.html" class="btn btn-comprar w-100">
+              COMPRAR
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>  
+  <!-- FOOTER -->
+  <footer class="footer-custom text-white py-4 px-3">
+    <div class="container-fluid">
+
+      <!-- BLOQUE CENTRADO EN TODA LA WEB -->
+      <div class="text-center mb-3">
+        <h5 class="footer-title mb-1">FRAME</h5>
+        <p class="footer-legal">PRIVACIDAD | TÉRMINOS & CONDICIONES</p>
+      </div>
+
+      <div class="row align-items-center text-center text-md-start">
+        <!-- Columna izquierda -->
+        <div class="col-12 col-md-8 d-flex flex-column mb-3 mb-md-0">
+          <p class="mb-1"><a href="mailto:framefestival@contact.com" class="footer-email">framefestival@contact.com</a></p>
+          <p class="mb-1 footer-datos">951-967-735</p>
+          <p class="mb-0 footer-datos">P.º Reding, 22, 24, Málaga-Este, 29016 Málaga</p>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end redes-sociales mt-3 mt-md-0">
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-tiktok"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuDesplegable');
+      menu.classList.toggle('active');
+    }
+  </script>
+  <script>
+  function modificarCantidad(valor) {
+    const input = document.getElementById("cantidad");
+    let cantidad = parseInt(input.value);
+    cantidad += valor;
+    if (cantidad < 1) cantidad = 1;
+    input.value = cantidad;
+  }
+</script>
+</body>
+</html>

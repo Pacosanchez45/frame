@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Listado de películas</title>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">   
+  <!-- OTROS LINKS -->
+  <!-- FUENTES -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Header -->
+    <header class="film-strip d-flex justify-content-between align-items-center px-3 py-2 position-relative">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/FRAME.logo.svg" alt="Inicio" class="icono-inicio">
+      </a>
+    </div>
+
+      <!-- MENÚ HORIZONTAL VISIBLE EN PANTALLAS GRANDES -->
+      <ul class="menu-desktop d-none d-lg-flex gap-4 m-0 p-0 list-unstyled">
+        <li><a href="peliculas.html" class="nav-link text-uppercase text-white">Películas</a></li>
+        <li><a href="contacto.html" class="nav-link text-uppercase text-white">Contacto</a></li>
+        <li><a href="compra.html" class="nav-link text-uppercase text-white">Tienda</a></li>
+      </ul>
+
+    <!-- CENTRO: icono menú -->
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <div class="icono-menu d-md-none" onclick="toggleMenu()">
+        <img src="img/film__icon.svg" alt="Menú" class="icono-cinta">
+      </div>
+    </div>
+
+    <!-- DERECHA: lupa -->
+    <div class="icono-buscar">
+      <i class="bi bi-search"></i>
+    </div>
+  </header>
+
+  <!-- MENÚ DESPLEGABLE -->
+  <nav id="menuDesplegable" class="menu-desplegable d-lg-none">
+    <ul class="list-unstyled text-center m-0 p-0">
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="peliculas.html">PELÍCULAS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a href="compra.html">TIENDA</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero + Carrusel -->
+  <section class="container-fluid text-center py-4">
+    <div class="row justify-content-center">
+      <div class="col-12 col-sm-10 col-md-8 col-lg-6 position-relative">
+        <div class="position-relative">
+          <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+            <div class="carousel-inner rounded">
+              <div class="carousel-item active">
+                <img src="img/sevenbts.jpg" class="d-block w-100" alt="Imagen 1">
+              </div>
+              <div class="carousel-item">
+                <img src="img/mementobts.webp" class="d-block w-100" alt="Imagen 2">
+              </div>
+              <div class="carousel-item">
+                <img src="img/origenbts.webp" class="d-block w-100" alt="Imagen 3">
+              </div>
+              <div class="carousel-item">
+                <img src="img/zodiacbts.jpg" class="d-block w-100" alt="Imagen 4">
+              </div>
+            </div>
+            <div class="btn-entrada-wrapper">
+              <a href="compra.html" class="btn btn-hero">¡Consigue tu entrada ahora!</a>
+            </div>
+          </div>
+          <h2 class="mt-3 titulo-principal-peliculas">PELÍCULAS</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cartas de Películas -->
+  <main>
+    <div class="container py-5">
+      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center">
+        <div class="col d-flex justify-content-center">
+          <div class="card-custom d-flex align-items-center p-3">
+            <img src="img/zodiac.webp" alt="Zodiac" class="img-pelicula">
+            <div class="ms-4 text-white">
+              <h5 class="fw-bold mb-1 titulopelicula">ZODIAC</h5>
+              <p class="fst-italic mb-2 director">David Fincher</p>
+              <span class="badge-custom">157min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <div class="card-custom d-flex align-items-center p-3">
+            <img src="img/psicosis.webp" alt="Psicosis" class="img-pelicula">
+            <div class="ms-4 text-white">
+              <h5 class="fw-bold mb-1 titulopelicula">PSICOSIS</h5>
+              <p class="fst-italic mb-2 director">Alfred Hitchcock</p>
+              <span class="badge-custom">109min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <div class="card-custom d-flex align-items-center p-3">
+            <img src="img/sevenfigure.jpg" alt="Seven" class="img-pelicula">
+            <div class="ms-4 text-white">
+              <h5 class="fw-bold mb-1 titulopelicula">SEVEN</h5>
+              <p class="fst-italic mb-2 director">David Fincher</p>
+              <span class="badge-custom">130min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <div class="card-custom d-flex align-items-center p-3">
+            <img src="img/memnto1.jpg" alt="Memento" class="img-pelicula">
+            <div class="ms-4 text-white">
+              <h5 class="fw-bold mb-1 titulopelicula">MEMENTO</h5>
+              <p class="fst-italic mb-2 director">Christopher Nolan</p>
+              <span class="badge-custom">113min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <div class="card-custom d-flex align-items-center p-3">
+            <img src="img/taxidriver.jpg" alt="Taxi Driver" class="img-pelicula">
+            <div class="ms-4 text-white">
+              <h5 class="fw-bold mb-1 titulopelicula">TAXI DRIVER</h5>
+              <p class="fst-italic mb-2 director">Martin Scorsese</p>
+              <span class="badge-custom">114min</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col d-flex justify-content-center">
+          <a href="peliculainfo.html" class="card-custom card-hover text-decoration-none text-white d-flex align-items-center p-3">
+            <img src="img/origen.jpg" alt="Origen" class="img-pelicula" />
+            <div class="ms-4">
+              <h5 class="fw-bold mb-1 titulopelicula">ORIGEN</h5>
+              <p class="fst-italic mb-2 director">Christopher Nolan</p>
+              <span class="badge-custom">148min</span>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+<!-- FOOTER -->
+  <footer class="footer-custom text-white py-4 px-3">
+    <div class="container-fluid">
+
+      <!-- BLOQUE CENTRADO EN TODA LA WEB -->
+      <div class="text-center mb-3">
+        <h5 class="footer-title mb-1">FRAME</h5>
+        <p class="footer-legal">PRIVACIDAD | TÉRMINOS & CONDICIONES</p>
+      </div>
+
+      <div class="row align-items-center text-center text-md-start">
+        <!-- Columna izquierda -->
+        <div class="col-12 col-md-8 d-flex flex-column mb-3 mb-md-0">
+          <p class="mb-1"><a href="mailto:framefestival@contact.com" class="footer-email">framefestival@contact.com</a></p>
+          <p class="mb-1 footer-datos">951-967-735</p>
+          <p class="mb-0 footer-datos">P.º Reding, 22, 24, Málaga-Este, 29016 Málaga</p>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end redes-sociales mt-3 mt-md-0">
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-tiktok"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuDesplegable');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,979 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;  
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--midblack);
+  color: var(--white);
+  overflow-x: hidden;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  width: 6rem; /* o 60px si lo prefieres más ancho */
+  height: 100vh;
+  background: var(--white);
+  z-index: 0;
+  pointer-events: none;
+}
+
+body::before {
+  left: 9rem;
+}
+
+body::after {
+  right: 9rem;
+}
+
+
+:root {
+  --red-bg: #E06758;
+  --white: #ffffff;
+  --black: #000000;
+  --midblack: #1C1C1C;
+  --beige: #fff9e7;
+}
+
+
+/* General */
+body {
+  background-color: var(--midblack);
+  color: var(--white);
+  font-family: 'Raleway', sans-serif;
+}
+
+/* Header */
+.film-strip {
+  background-color: #111;
+  border-top: 4px dotted #f3f3dc;
+  border-bottom: 4px dotted #f3f3dc;
+  height: 64px;
+  width: 100%;
+  position: relative; /* necesario */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo img {
+  height: 28px;
+}
+
+.icono-menu img {
+  height: 30px;
+  cursor: pointer;
+}
+
+.icono-buscar i {
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Menú desplegable */
+.menu-desplegable {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--red-bg);
+  border-radius: 1.5rem;
+  border: 5px solid var(--white);
+  width: 12.25rem;
+  padding: 1.5rem 1rem;
+  z-index: 20;
+  position: absolute;
+  top: 70px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-desplegable ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-desplegable li {
+  margin-bottom: 1rem; /* espaciado entre elementos */
+}
+
+
+.menu-desplegable.active {
+  display: flex;
+}
+
+.menu-desplegable a {
+  color: var(--white, #FFF);
+  text-decoration: none; /* eliminar subrayado */
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.menu-desplegable a:hover {
+  transform: scale(1.1);
+  text-shadow: 0 0 8px var(--black);
+}
+
+.menu-desktop li a {
+  color: var(--white);
+  font-family: "Cinzel", serif;
+  font-weight: 600;
+  text-decoration: none;
+  border-left: 2px solid var(--white);
+  border-right: 2px solid var(--white);
+  padding: 0 0.75rem;
+  transition: all 0.2s ease;
+  align-items: center;
+}
+
+.menu-desktop li a:hover {
+  transform: scale(1.1);
+  color: var(--red-bg);
+}
+
+/* Carousel */
+#heroCarousel {
+  position: relative;
+  overflow: hidden;
+  border: 5px solid var(--white);
+  border-radius: 1rem;
+  height: auto;
+}
+
+.hero-img-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.hero-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0.75rem;
+}
+
+/* Botón dentro del hero */
+.btn-hero {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  font-family: "Lora", sans-serif;
+  transform: translateX(-50%);
+  background-color: var(--red-bg);
+  border: 3px solid var(--white);
+  border-radius: 1rem;
+  color: white;
+  padding: 0.5rem 1.25rem;
+  font-weight: 00;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  z-index: 2;
+}
+
+.btn-hero:hover {
+  background-color: #992525;
+}
+
+.btn-entrada-wrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 5;
+}
+
+/* Títulos */
+.titulo-principal {
+  font-family: 'Lora', serif;
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.titulo-principal2 {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+/* Secciones */
+.section-title1,
+.section-title-noticias,
+.section-title-eventos {
+  font-family: 'Lora', serif;
+  font-size: 2.25rem;
+  font-weight: 600;
+  border-top: 3px dashed var(--white);
+  padding: 10px 0;
+  margin: 20px 0;
+  color: var(--red-bg);
+}
+
+.section-title2 {
+  color: var(--white);
+  text-align: center;
+  font-family: Lora;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.75rem;
+  letter-spacing: 0.05rem;
+}
+
+/* Cards */
+.news-card,
+.event-card {
+  background-color: var(--red-bg);
+  color: var(--white);
+  border-radius: 10px;
+  padding: 15px;
+  border: 1px solid var(--white);
+}
+
+.titulo-noticia{
+  color: var(--white);
+  text-align: center;
+  font-family: "Lora", sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4375rem;
+}
+
+.titulo-noticia2{
+  color: var(--white, #FFF);
+  font-family: "Lora", sans-serif;
+  font-size: 0.9375rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4375rem; /* 153.333% */
+}
+
+.news-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.news-card .btn {
+  background-color: #f8f8f8;
+  color: var(--black);
+  font-weight: bold;
+  width: 100%;
+}
+
+/* Eventos */
+.event-title {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.event-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.event-card ul li {
+  position: relative;
+  padding-left: 1.2em;
+  margin-bottom: 1rem;
+  text-align: left;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;
+}
+
+.event-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--white);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Sección de título "PELÍCULAS" */
+.titulo-principal-peliculas {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  font-weight: bold;
+  border-bottom: 4px dotted white;
+  display: inline-block;
+  padding-bottom: 2rem;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+/* Tarjetas */
+.card-custom {
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  gap: 1.5rem;
+  border-radius: 1.5rem;
+  border: 3px solid var(--midblack);
+  background: var(--red-bg);
+  box-shadow: 0px 5px 3.5px 0px rgba(0, 0, 0, 0.50);
+  width: 100%;
+  max-width: 24rem;
+  min-height: 160px;
+}
+
+.titulo-principal-peliculas{
+  color: var(--white, #FFF);
+  text-align: center;
+  font-family: "Lora",sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.125rem;
+}
+
+.card-custom:hover {
+  transform: translateY(-4px);
+}
+
+/* Imagen dentro de la tarjeta */
+.img-pelicula {
+  width: 9.25rem;
+  height: 10.8125rem;
+  border-radius: 1rem;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Título de película */
+.titulopelicula {
+  color: var(--white);
+  font-family: Cinzel;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+/* Director */
+.director {
+  color: var(--white);
+  font-family: "Roboto Flex";
+  font-size: 0.75rem;
+  font-style: italic;
+  font-weight: 200;
+  line-height: normal;
+}
+
+/* Duración en badge */
+.badge-custom {
+  background-color: var(--midblack);
+  color: var(--white);
+  font-family: Inter;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0 50px 50px 0;
+}
+
+/* TITULO PELICULAS */
+.titulo-principal-pelicula{
+  color: var(--white, #FFF);
+  text-align: center;
+  font-family: "Lora",sans-serif;
+  font-size: 3rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0rem; /* 0% */
+  text-transform: uppercase;
+  margin-bottom: 2.5rem;
+}
+
+.titulo2-principal-pelicula{
+  color: var(--white, #FFF);
+  text-align: center;
+  font-family: "Lora",sans-serif;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0rem; /* 0% */
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+/* CONTENIDO GENERAL DE LA PELÍCULA */
+.contenido-pelicula {
+  background-color: var(--midblack);
+  padding-bottom: 0rem;
+  position: relative;
+}
+
+/* LÍNEA VERTICAL IZQUIERDA */
+.vertical-line-left {
+  position: absolute;
+  left: 3;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: var(--white);
+}
+
+/* TITULILLOS COMO "DIRECTOR", "PREMIOS", "SINOPSIS"... */
+.section-title {
+  color: #EB5D44;
+  font-family: "Cinzel";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 3.125rem; /* 208.333% */
+  text-transform: uppercase;
+}
+
+/* TEXTOS EXPLICATIVOS BAJO CADA TÍTULO */
+.section-desc {
+  color: var(--white, #FFF);
+  font-family: "Roboto Flex";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.875rem; /* 214.286% */
+}
+
+/* SEPARADOR VERTICAL ENTRE DIRECTOR Y PREMIOS */
+.divider-vertical {
+  border-left: 2px solid var(--white);
+  height: 100%;
+}
+
+/* HR BLANCA FUERTE ENTRE BLOQUES */
+.hr-white-strong {
+  border-top: 2px solid var(--white);
+  opacity: 1;
+  margin: 2rem 0;
+}
+
+/* LISTA NUMERADA DE CURIOSIDADES */
+.curiosidades-list {
+  padding-left: 1.2rem;
+  list-style: decimal;
+}
+
+/* ELEMENTOS DE LA LISTA DE CURIOSIDADES */
+.curiosidades-list li {
+  font-size: 0.95rem;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+/* DETALLES BAJO CADA CURIOSIDAD */
+.curiosidad-detalle {
+  font-size: 0.85rem;
+  color: var(--white);
+  line-height: 1.5;
+  display: block;
+  margin-top: 0.25rem;
+}
+
+/* BOTÓN DE ENTRADA */
+.btn-entrada {
+  border: 2px solid var(--red-bg);
+  background-color: var(--white);
+  color: #000;
+  text-align: center;
+  font-family: Lora;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.4375rem; /* 164.286% */
+  border-radius: 6px;
+  padding: 0.25rem 0.6rem;
+  transition: all 0.3s ease;
+}
+
+.btn-entrada:hover {
+  background-color: var(--red-bg);
+  color: var(--white);
+}
+
+/* SECCIÓN COMPRAR ENTRADAS*/
+
+.datos-pago-card {
+  padding: 3rem 2.5rem;  /* Aumenta el relleno */
+  max-width: 900px;      /* Aumenta el ancho máximo */
+  width: 100%;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+.titulo-compra {
+  color: var(--white);
+  text-align: center;
+  font-family: "Lora";
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.125rem; /* 138.889% */
+  text-transform: uppercase;
+}
+
+.compra-label {
+  color: var(--white, #FFF);
+  font-family: "Lora";
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 3.125rem; /* 312.5% */
+  text-transform: uppercase;
+}
+
+.btn-compra {
+  background-color: var(--red-bg);
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 50px;
+}
+
+.btn-compra:hover {
+  background-color: #d75448;
+}
+
+.input-cantidad-wrapper {
+  flex: 1;
+}
+
+.cantidad-input {
+  background-color: var(--beige);
+  border-radius: 8px;
+  border: none;
+  font-weight: 400;
+  font-size: 1rem;
+  width: 100%;
+  max-width: 200px;
+}
+
+
+.select-wrapper {
+  position: relative;
+}
+
+.select-wrapper select,
+.select-wrapper input[type="date"] {
+  width: 100%;
+  padding-right: 2.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  height: 2.5rem;
+  font-weight: 400;
+  text-align: center;
+  background-color: var(--beige);
+  color: var(--black);
+  appearance: none;
+}
+
+.select-wrapper::after {
+  content: '\f282'; /* Bootstrap Icon "chevron-down" */
+  font-family: "Bootstrap-icons";
+  font-size: 1rem;
+  color: red;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.btn-comprar {
+  background-color: var(--red-bg);
+  color: var(--white);
+  border: none;
+  font-weight: bold;
+  padding: 0.75rem;
+  font-family: 'Cinzel', serif;
+  transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+
+.btn-comprar:hover {
+  background-color: #67170f;
+}
+
+.custom-select {
+  width: 100%;
+  font-family: "Lora",sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  display: flex;
+  height: 3.125rem;
+  text-align: center !important;
+  text-align-last: center !important;
+  display: block;
+  background-color: var(--beige);
+  border-radius: 0.5rem;
+  border: none;
+  appearance: none;
+}
+
+.custom-select option {
+  text-align: center;
+}
+
+/* Envoltorio que crece para empujar el footer abajo */
+.page-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Contenido principal */
+.main-content {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+/* Tarjeta de pago */
+.datos-pago-card {
+  background-color: var(--black);
+  border: 5px solid var(--white);
+  border-radius: 1rem;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+  text-align: center;
+}
+
+/* Título */
+.titulo-compra {
+  color: var(--white);
+  font-family: "Lora";
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Botón de pagar */
+.btn-comprar {
+  background-color: var(--red-bg);
+  color: var(--white);
+  border: none;
+  font-weight: bold;
+  padding: 0.75rem;
+  font-family: 'Cinzel', serif;
+  transition: background-color 0.3s ease;
+  border-radius: 0.5rem;
+}
+
+.compra-card {
+  background-color: var(--black);
+  border: 5px solid var(--white);
+  border-radius: 1rem;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+}
+
+.btn-comprar:hover {
+  background-color: #67170f;
+}
+
+/* SECCIÓN CONTACTO */
+
+.titulo-contacto{
+  color: var(--red-bg);
+  text-align: center;
+  font-family: "Lora";
+  font-size: 4rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 4.6875rem; /* 117.188% */
+  text-transform: uppercase;
+}
+
+.footer-social-text{
+  color: var(--white);
+  font-family: "Roboto Flex";
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.25rem; /* 83.333% */
+}
+
+.section-title-contacto{
+  color: var(--red-bg);
+  text-align: center;
+  font-family: "Lora";
+  font-size: 2.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 2.875rem; /* 71.875% */
+  text-transform: uppercase;
+}
+
+.section-desc-contacto{
+  color: var(--white);
+  font-family: "Lora";
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%; /* 2.1rem */
+  letter-spacing: 0.06rem;
+}
+
+.contact-card, .location-card {
+  width: 100%;
+  padding: 2rem;
+  border: 3px solid var(--white);
+  border-radius: 1rem;
+  background-color: var(--black);
+  color: var(--white);
+  text-align: center;
+}
+
+/* Footer */
+
+.footer{
+  position: relative;
+  z-index: 10;
+}
+
+.footer-custom {
+  width: 100%;
+  border-top: 1px solid var(--white);
+  background: var(--black);
+  z-index: 10;
+}
+
+.footer-title {
+  font-size: 2rem;
+  font-family: "Roboto Flex";
+  font-weight: 100;
+  text-transform: uppercase;
+}
+
+.footer-legal {
+  font-size: 0.9rem;
+  font-family: "Raleway";
+  text-transform: uppercase;
+}
+
+.footer-email {
+  color: var(--white);
+  text-decoration: none;
+}
+
+.footer-datos {
+  color: var(--white);
+  font-family: "Lora";
+  text-transform: uppercase;
+}
+
+.redes-sociales i {
+  font-size: 1.7rem;
+  margin-left: 1.5rem;
+  color: white;
+  transition: transform 0.2s ease-in-out;
+}
+
+.redes-sociales i:hover {
+  transform: scale(1.3);
+  color: var(--red-bg);
+}
+
+
+/*MEDIA QUERIES */
+@media (max-width: 991px) {
+
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  .icono-menu {
+    display: flex !important;
+  }
+
+  .menu-desplegable {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--red-bg);
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    padding: 1rem;
+    border: 4px solid var(--black);
+    border-radius: 1rem;
+    z-index: 999;
+  }
+
+  .menu-desplegable.active {
+    display: flex;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .menu-desplegable {
+    display: none !important;
+  }
+
+  .menu-horizontal {
+    display: flex !important;
+    gap: 2rem;
+    margin-right: 2rem;
+  }
+
+  .icono-menu {
+    display: none !important;
+  }
+
+  .datos-pago-card {
+    max-width: 600px;
+    padding: 8rem 3rem;
+    min-height: 550px;
+    font-size: 1.15rem;
+  }
+
+  .titulo-compra {
+    font-size: 3rem;
+    padding-bottom: 2rem;
+  }
+
+  .datos-pago-card input {
+    margin-bottom: 1.5rem;
+  }
+
+  .btn {
+    font-size: 1.2rem;
+    padding: 0.75rem 2rem;
+  }
+
+  .subtitulo-principal{
+    font-size: 3rem;
+  }
+
+  .section-title2{
+    font-size: 2rem;
+  }
+
+    .titulo-noticia{
+    font-size: 1.5rem;
+  }
+
+  .titulo-noticia2{
+    font-size: 1.1rem;
+  }
+
+  .container{
+    font-size: 1.3rem;
+  }
+  .card-custom {
+    max-width: 32rem;     /* antes era 24rem */
+    min-height: 300px;    /* antes era 160px */
+    padding: 2rem;        /* más espacio interno */
+    font-size: 1.05rem;   /* texto ligeramente mayor si lo deseas */
+  }
+
+  .img-pelicula {
+    width: 14rem;         /* un poco más ancha */
+    height: 16rem;        /* un poco más alta */
+  }
+
+  .titulopelicula {
+    font-size: 1.3rem;
+  }
+
+  .director {
+    font-size: 1.1rem;
+  }
+  .contenido-pelicula .container {
+    font-size: 1.15rem;
+    line-height: 1.9;
+    max-width: 960px;
+    padding: 3rem 2rem;
+  }
+
+  /* TÍTULOS */
+  .titulo-principal-pelicula,
+  .titulo2-principal-pelicula {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-top: 2rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-desc {
+    font-size: 1.15rem;
+    line-height: 1.9;
+  }
+
+  /* CURIOSIDADES DETALLE */
+  .curiosidad-detalle {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .curiosidades-list li strong {
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* BOTÓN ENTRADA */
+  .btn-entrada {
+    font-size: 1rem;
+  }
+
+/* MÁS ESPACIO ENTRE BLOQUES */
+  .contenido-pelicula .container > * {
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-card, .location-card {
+    padding: 3rem;
+  }
+
+  .contact-card p,
+  .location-card p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+  }
+
+  .section-title-contacto {
+    font-size: 4rem;
+    line-height: 1.2;
+  }
+}

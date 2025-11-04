@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error en el pago</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="film-strip d-flex justify-content-between align-items-center px-3 py-2 position-relative">
+    <!-- LOGO -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/FRAME.logo.svg" alt="Inicio" class="icono-inicio">
+      </a>
+    </div>
+
+      <!-- MENÚ HORIZONTAL VISIBLE EN PANTALLAS GRANDES -->
+      <ul class="menu-desktop d-none d-lg-flex gap-4 m-0 p-0 list-unstyled">
+        <li><a href="peliculas.html" class="nav-link text-uppercase text-white">Películas</a></li>
+        <li><a href="contacto.html" class="nav-link text-uppercase text-white">Contacto</a></li>
+        <li><a href="compra.html" class="nav-link text-uppercase text-white">Tienda</a></li>
+      </ul>
+
+    <!-- CENTRO: icono menú -->
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <div class="icono-menu d-md-none" onclick="toggleMenu()">
+        <img src="img/film__icon.svg" alt="Menú" class="icono-cinta">
+      </div>
+    </div>
+
+    <!-- DERECHA: lupa -->
+    <div class="icono-buscar">
+      <i class="bi bi-search"></i>
+    </div>
+  </header>
+
+  <!-- MENÚ DESPLEGABLE -->
+  <nav id="menuDesplegable" class="menu-desplegable d-lg-none">
+    <ul class="list-unstyled text-center m-0 p-0">
+      <li><a href="index.html">INICIO</a></li>
+      <li><a href="peliculas.html">PELÍCULAS</a></li>
+      <li><a href="contacto.html">CONTACTO</a></li>
+      <li><a href="compra.html">TIENDA</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <div class="page-wrapper">
+    <main class="main-content">
+      <section class="compra-section py-5 text-center">
+        <div class="container">
+          <div class="compra-card mx-auto p-4 rounded">
+            <h2 class="titulo-compra mb-4">PASÓ ALGO RARO...</h2>
+            <img src="img/errorpago.gif" alt="Error en el pago" class="img-fluid rounded mb-3">
+            <p>Ups... Parece que hubo algún fallo en la transacción de su compra. Pulse el botón de Reintentar, para volver a realizar la compra.</p>
+            <a href="datospago.html" class="btn btn-comprar mt-3">REINTENTAR</a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>  
+
+  <!-- FOOTER -->
+  <footer class="footer-custom text-white py-4 px-3">
+    <div class="container-fluid">
+
+      <!-- BLOQUE CENTRADO EN TODA LA WEB -->
+      <div class="text-center mb-3">
+        <h5 class="footer-title mb-1">FRAME</h5>
+        <p class="footer-legal">PRIVACIDAD | TÉRMINOS & CONDICIONES</p>
+      </div>
+
+      <div class="row align-items-center text-center text-md-start">
+        <!-- Columna izquierda -->
+        <div class="col-12 col-md-8 d-flex flex-column mb-3 mb-md-0">
+          <p class="mb-1"><a href="mailto:framefestival@contact.com" class="footer-email">framefestival@contact.com</a></p>
+          <p class="mb-1 footer-datos">951-967-735</p>
+          <p class="mb-0 footer-datos">P.º Reding, 22, 24, Málaga-Este, 29016 Málaga</p>
+        </div>
+
+        <!-- Columna derecha -->
+        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end redes-sociales mt-3 mt-md-0">
+          <i class="bi bi-twitter"></i>
+          <i class="bi bi-instagram"></i>
+          <i class="bi bi-tiktok"></i>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menuDesplegable');
+      menu.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>
