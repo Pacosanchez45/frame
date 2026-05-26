@@ -1,102 +1,68 @@
-<!-- pago_correcto.html -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pago Exitoso</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pago confirmado | FRAME Festival</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="film-strip d-flex justify-content-between align-items-center px-3 py-2 position-relative">
-    <!-- LOGO -->
-    <div class="logo">
-      <a href="index.html">
-        <img src="img/FRAME.logo.svg" alt="Inicio" class="icono-inicio">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-link" href="index.html" aria-label="FRAME inicio">
+        <img src="img/FRAME.logo.svg" alt="FRAME">
+        <span class="brand-mark" aria-hidden="true">F</span>
       </a>
-    </div>
-
-      <!-- MENÚ HORIZONTAL VISIBLE EN PANTALLAS GRANDES -->
-      <ul class="menu-desktop d-none d-lg-flex gap-4 m-0 p-0 list-unstyled">
-        <li><a href="peliculas.html" class="nav-link text-uppercase text-white">Películas</a></li>
-        <li><a href="contacto.html" class="nav-link text-uppercase text-white">Contacto</a></li>
-        <li><a href="compra.html" class="nav-link text-uppercase text-white">Tienda</a></li>
-      </ul>
-
-    <!-- CENTRO: icono menú -->
-    <div class="position-absolute top-50 start-50 translate-middle">
-      <div class="icono-menu d-md-none" onclick="toggleMenu()">
-        <img src="img/film__icon.svg" alt="Menú" class="icono-cinta">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="peliculas.html">Películas</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="compra.html">Entradas</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
       </div>
-    </div>
-
-    <!-- DERECHA: lupa -->
-    <div class="icono-buscar">
-      <i class="bi bi-search"></i>
     </div>
   </header>
 
-  <!-- MENÚ DESPLEGABLE -->
-  <nav id="menuDesplegable" class="menu-desplegable d-lg-none">
-    <ul class="list-unstyled text-center m-0 p-0">
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="peliculas.html">PELÍCULAS</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
-      <li><a href="compra.html">TIENDA</a></li>
-    </ul>
+  <nav class="mobile-menu" data-mobile-menu aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="compra.html">Entradas</a>
   </nav>
-    
-  <!-- PAGO EXISTOSO-->
-  <div class="page-wrapper">
-    <main class="main-content"> 
-      <section class="compra-section py-5 text-center">
-        <div class="container">
-          <div class="compra-card mx-auto p-4">
-            <h2 class="titulo-compra mb-4"> ¡PAGO EXISTOSO!</h2>
-            <img src="img/pagocrrecto.gif" alt="Pago correcto" class="img-fluid rounded mb-3">
-            <p>En breves recibirá sus entradas en su correo electrónico. ¡Muchas gracias por asistir a nuestro evento!</p>
-            <a href="index.html" class="btn btn-comprar mt-3">INICIO</a>
-          </div>
-        </div>
-      </section>
-    </main>
-  </div>  
 
-<!-- FOOTER -->
-  <footer class="footer-custom text-white py-4 px-3">
-    <div class="container-fluid">
-
-      <!-- BLOQUE CENTRADO EN TODA LA WEB -->
-      <div class="text-center mb-3">
-        <h5 class="footer-title mb-1">FRAME</h5>
-        <p class="footer-legal">PRIVACIDAD | TÉRMINOS & CONDICIONES</p>
+  <main class="form-shell">
+    <section class="state-card">
+      <p class="eyebrow">Compra confirmada</p>
+      <h1 class="panel-title">Pago realizado</h1>
+      <img src="img/pagocrrecto.gif" alt="Pago correcto">
+      <p>Recibirás tus entradas por correo electrónico. Gracias por formar parte de FRAME Festival.</p>
+      <div class="actions-row" style="justify-content:center">
+        <a class="btn-frame btn-primary-frame" href="index.html">Volver al inicio</a>
+        <a class="btn-frame btn-secondary-frame" href="peliculas.html">Ver películas</a>
       </div>
+    </section>
+  </main>
 
-      <div class="row align-items-center text-center text-md-start">
-        <!-- Columna izquierda -->
-        <div class="col-12 col-md-8 d-flex flex-column mb-3 mb-md-0">
-          <p class="mb-1"><a href="mailto:framefestival@contact.com" class="footer-email">framefestival@contact.com</a></p>
-          <p class="mb-1 footer-datos">951-967-735</p>
-          <p class="mb-0 footer-datos">P.º Reding, 22, 24, Málaga-Este, 29016 Málaga</p>
-        </div>
-
-        <!-- Columna derecha -->
-        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end redes-sociales mt-3 mt-md-0">
-          <i class="bi bi-twitter"></i>
-          <i class="bi bi-instagram"></i>
-          <i class="bi bi-tiktok"></i>
-        </div>
+  <footer class="site-footer">
+    <div class="container-page footer-grid">
+      <div>
+        <h2 class="footer-title">FRAME</h2>
+        <p>Privacidad · Términos y condiciones</p>
+      </div>
+      <div class="social-links" aria-label="Redes sociales">
+        <a href="contacto.html" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+        <a href="contacto.html" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="contacto.html" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
       </div>
     </div>
   </footer>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menuDesplegable');
-      menu.classList.toggle('active');
-    }
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>

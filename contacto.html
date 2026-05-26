@@ -1,132 +1,110 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto</title>
-  <!-- BOOTSTRAP -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">   
-  <!-- OTROS LINKS -->
-  <!-- FUENTES -->
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500&display=swap" rel="stylesheet"> 
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Flex:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto | FRAME Festival</title>
+  <meta name="description" content="Contacto, ubicación y redes sociales de FRAME Festival en el Palacio Miramar de Málaga.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Bree+Serif&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend+Deca:wght@100..900&family=Lora:ital,wght@0,400..700;1,400..700&family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-  <!-- CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header class="film-strip d-flex justify-content-between align-items-center px-3 py-2 position-relative">
-    <!-- LOGO -->
-    <div class="logo">
-      <a href="index.html">
-        <img src="img/FRAME.logo.svg" alt="Inicio" class="icono-inicio">
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand-link" href="index.html" aria-label="FRAME inicio">
+        <img src="img/FRAME.logo.svg" alt="FRAME">
+        <span class="brand-mark" aria-hidden="true">F</span>
       </a>
-    </div>
-
-      <!-- MENÚ HORIZONTAL VISIBLE EN PANTALLAS GRANDES -->
-      <ul class="menu-desktop d-none d-lg-flex gap-4 m-0 p-0 list-unstyled">
-        <li><a href="peliculas.html" class="nav-link text-uppercase text-white">Películas</a></li>
-        <li><a href="contacto.html" class="nav-link text-uppercase text-white">Contacto</a></li>
-        <li><a href="compra.html" class="nav-link text-uppercase text-white">Tienda</a></li>
-      </ul>
-
-
-    <!-- CENTRO: icono menú -->
-    <div class="position-absolute top-50 start-50 translate-middle">
-      <div class="icono-menu d-md-none" onclick="toggleMenu()">
-        <img src="img/film__icon.svg" alt="Menú" class="icono-cinta">
+      <nav class="main-nav" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="peliculas.html">Películas</a>
+        <a class="is-active" href="contacto.html">Contacto</a>
+        <a href="compra.html">Entradas</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-button" type="button" data-search-toggle aria-expanded="false" aria-label="Buscar"><i class="bi bi-search"></i></button>
+        <button class="icon-button menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-label="Abrir menú"><i class="bi bi-list"></i></button>
       </div>
-    </div>
-
-    <!-- DERECHA: lupa -->
-    <div class="icono-buscar">
-      <i class="bi bi-search"></i>
     </div>
   </header>
 
-
-  <!-- MENÚ DESPLEGABLE -->
-  <nav id="menuDesplegable" class="menu-desplegable d-lg-none">
-    <ul class="list-unstyled text-center m-0 p-0">
-      <li><a href="index.html">INICIO</a></li>
-      <li><a href="peliculas.html">PELÍCULAS</a></li>
-      <li><a href="contacto.html">CONTACTO</a></li>
-      <li><a href="compra.html">TIENDA</a></li>
-    </ul>
+  <nav class="mobile-menu" data-mobile-menu aria-label="Menú móvil">
+    <a href="index.html">Inicio</a>
+    <a href="peliculas.html">Películas</a>
+    <a href="contacto.html">Contacto</a>
+    <a href="compra.html">Entradas</a>
   </nav>
 
-<!-- CONTACTO -->
-  <div class="page-wrapper">
-    <div class="container my-5">
-      <div class="row justify-content-center align-items-stretch g-4">
-        <!-- Contacto -->
-        <div class="col-12 col-md-6 col-lg-5">
-          <div class="contact-card h-100 p-4 text-center">
-            <h2 class="section-title-contacto mb-4">¡PONTE EN CONTACTO CON NOSOTROS!</h2>
-            <p><i class="bi bi-envelope"></i> framefestival@contact.com</p>
-            <p><i class="bi bi-instagram"></i> @FrameFestival</p>
-            <p><i class="bi bi-twitter"></i> @FrameFestival</p>
-            <p><i class="bi bi-facebook"></i> @FrameFestival</p>
-            <p><i class="bi bi-tiktok"></i> @FrameFestival</p>
-            <p><i class="bi bi-telephone"></i> 951-967-735</p>
-          </div>
-        </div>
-
-        <!-- Localización -->
-        <div class="col-12 col-md-6 col-lg-5">
-          <div class="location-card h-100 p-4 text-center">
-            <h2 class="section-title-contacto mb-4">¿DÓNDE ESTAMOS?</h2>
-            <p>
-              Del 22 de julio al 27 de julio, en el Palacio Miramar de Málaga, frente al Mediterráneo, se convierte en el epicentro del lujo y la cultura. A un paso de la playa, promete experiencias únicas en un entorno incomparable. ¡Un verano que no olvidarás!
-            </p>
-          </div>
-        </div>
+  <section class="search-panel" data-search-panel>
+    <div class="container-page">
+      <div class="search-box">
+        <input type="search" data-search-input placeholder="Buscar películas, entradas o contacto..." aria-label="Buscar en FRAME">
+        <button class="btn-frame btn-primary-frame" type="button" data-search-toggle>Cerrar</button>
       </div>
+      <div class="search-results" data-search-results></div>
     </div>
-  </div>  
+  </section>
 
-<!-- FOOTER -->
-  <footer class="footer-custom text-white py-4 px-3">
-    <div class="container-fluid">
-
-      <!-- BLOQUE CENTRADO EN TODA LA WEB -->
-      <div class="text-center mb-3">
-        <h5 class="footer-title mb-1">FRAME</h5>
-        <p class="footer-legal">PRIVACIDAD | TÉRMINOS & CONDICIONES</p>
+  <main>
+    <section class="page-hero">
+      <div class="container-page">
+        <p class="eyebrow">Contacto</p>
+        <h1 class="page-title">Estamos en Málaga</h1>
+        <p>Del 22 al 27 de julio, FRAME Festival se celebra en el Palacio Miramar, frente al Mediterráneo.</p>
       </div>
+    </section>
 
-      <div class="row align-items-center text-center text-md-start">
-        <!-- Columna izquierda -->
-        <div class="col-12 col-md-8 d-flex flex-column mb-3 mb-md-0">
-          <p class="mb-1"><a href="mailto:framefestival@contact.com" class="footer-email">framefestival@contact.com</a></p>
-          <p class="mb-1 footer-datos">951-967-735</p>
-          <p class="mb-0 footer-datos">P.º Reding, 22, 24, Málaga-Este, 29016 Málaga</p>
+    <section class="container-page contact-layout">
+      <article class="contact-card">
+        <p class="eyebrow">Canales</p>
+        <h2 class="panel-title">Hablemos</h2>
+        <div class="summary-box">
+          <p><i class="bi bi-envelope"></i> <a href="mailto:framefestival@contact.com">framefestival@contact.com</a></p>
+          <p><i class="bi bi-telephone"></i> 951 967 735</p>
+          <p><i class="bi bi-instagram"></i> @FrameFestival</p>
+          <p><i class="bi bi-twitter"></i> @FrameFestival</p>
+          <p><i class="bi bi-tiktok"></i> @FrameFestival</p>
         </div>
+        <a class="btn-frame btn-primary-frame" href="mailto:framefestival@contact.com">Enviar email</a>
+      </article>
 
-        <!-- Columna derecha -->
-        <div class="col-12 col-md-4 d-flex justify-content-center justify-content-md-end redes-sociales mt-3 mt-md-0">
-          <i class="bi bi-twitter"></i>
-          <i class="bi bi-instagram"></i>
-          <i class="bi bi-tiktok"></i>
+      <article class="contact-card">
+        <p class="eyebrow">Ubicación</p>
+        <h2 class="panel-title">Palacio Miramar</h2>
+        <p class="text-white-50">
+          P.º Reding, 22, Málaga-Este, 29016 Málaga. Un entorno junto al mar para vivir cine, coloquios y experiencias de suspense.
+        </p>
+        <div class="summary-box">
+          <p><strong>Fechas:</strong> 22-27 julio</p>
+          <p><strong>Acceso:</strong> apertura de puertas 30 minutos antes de cada sesión</p>
+          <p><strong>Entrada:</strong> 12 € por sesión</p>
         </div>
+        <a class="btn-frame btn-secondary-frame" href="compra.html">Comprar entrada</a>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container-page footer-grid">
+      <div>
+        <h2 class="footer-title">FRAME</h2>
+        <p>Privacidad · Términos y condiciones</p>
+        <div class="footer-contact">
+          <a href="mailto:framefestival@contact.com">framefestival@contact.com</a>
+          <span>951 967 735 · P.º Reding, 22, Málaga</span>
+        </div>
+      </div>
+      <div class="social-links" aria-label="Redes sociales">
+        <a href="contacto.html" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+        <a href="contacto.html" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        <a href="contacto.html" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
       </div>
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menuDesplegable');
-      menu.classList.toggle('active');
-    }
-  </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
