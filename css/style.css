@@ -450,6 +450,7 @@ textarea:focus-visible {
   background:
     linear-gradient(145deg, rgba(255, 250, 240, .1), rgba(255, 250, 240, .03)),
     rgba(12, 12, 12, .74);
+  margin-bottom: 70px;
   overflow: visible;
 }
 
@@ -531,8 +532,8 @@ textarea:focus-visible {
 
 .poster-stack {
   position: absolute;
-  top: 18px;
   right: 18px;
+  bottom: -56px;
   z-index: 3;
   display: flex;
   gap: 10px;
@@ -1364,6 +1365,7 @@ textarea:focus-visible {
   .poster-stack {
     position: static;
     width: 100%;
+    margin-top: 0;
     justify-content: center;
     border-inline: 0;
     border-bottom: 0;
