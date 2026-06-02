@@ -538,6 +538,10 @@ textarea:focus-visible {
   color: var(--muted);
 }
 
+.page-hero .eyebrow {
+  margin-bottom: 16px;
+}
+
 .program-strip {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
