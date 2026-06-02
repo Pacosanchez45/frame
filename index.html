@@ -69,6 +69,12 @@
             <a class="btn-frame btn-secondary-frame" href="peliculas.html">Ver programación</a>
           </div>
 
+          <div class="hero-tags" aria-label="Temáticas del festival">
+            <span><i class="bi bi-camera-reels"></i> Thriller psicológico</span>
+            <span><i class="bi bi-moon-stars"></i> Sesiones nocturnas</span>
+            <span><i class="bi bi-chat-square-text"></i> Coloquios</span>
+          </div>
+
           <div class="stats-strip" aria-label="Datos del festival">
             <div><strong>6</strong><span>películas seleccionadas</span></div>
             <div><strong>5 días</strong><span>de proyecciones y eventos</span></div>
@@ -76,17 +82,38 @@
           </div>
         </div>
 
-        <article class="hero-card">
+        <article class="hero-card cinematic-card">
+          <div class="hero-card-topbar" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
           <img src="img/hero.webp" alt="Escena de cine de suspense">
           <div class="hero-card-overlay">
-            <h2>Entrada general · 12 €</h2>
-            <p>Incluye proyección, acceso a coloquio y actividades del día.</p>
+            <span class="movie-time">22:45</span>
+            <h2>Pase destacado · Origen</h2>
+            <p>Proyección, coloquio y acceso a actividades del día incluidos.</p>
+            <a href="peliculainfo.html?pelicula=origen">Ver ficha <i class="bi bi-arrow-right"></i></a>
+          </div>
+          <div class="poster-stack" aria-label="Películas destacadas">
+            <img src="img/psicosis.webp" alt="Psicosis">
+            <img src="img/sevenfigure.jpg" alt="Seven">
+            <img src="img/memnto1.jpg" alt="Memento">
           </div>
         </article>
       </div>
     </section>
 
-    <section class="section-block">
+    <section class="festival-ribbon" aria-label="Características del festival">
+      <div class="ribbon-track">
+        <span>Thriller</span>
+        <span>Crimen</span>
+        <span>Suspense</span>
+        <span>Coloquios</span>
+        <span>Sesiones nocturnas</span>
+        <span>Málaga</span>
+      </div>
+    </section>
+
+    <section class="section-block intro-section">
       <div class="container-page">
         <div class="section-heading center">
           <p class="eyebrow">Qué es FRAME</p>
@@ -95,6 +122,44 @@
             FRAME combina grandes referentes del suspense con programación cultural, mesas redondas y experiencias
             participativas. La web ahora guía mejor hacia las películas y la compra de entradas.
           </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block featured-program">
+      <div class="container-page">
+        <div class="section-heading">
+          <p class="eyebrow">Programación destacada</p>
+          <h2>Tres formas de entrar en la tensión.</h2>
+        </div>
+
+        <div class="feature-grid">
+          <a class="feature-card feature-card-large" href="peliculainfo.html?pelicula=zodiac">
+            <img src="img/zodiac.webp" alt="Zodiac">
+            <div>
+              <span class="movie-time">18:00</span>
+              <h3>Zodiac</h3>
+              <p>Investigación, obsesión y una atmósfera seca donde cada pista pesa.</p>
+            </div>
+          </a>
+
+          <a class="feature-card" href="peliculainfo.html?pelicula=psicosis">
+            <img src="img/psicosis2.jpg" alt="Psicosis">
+            <div>
+              <span class="movie-time">19:15</span>
+              <h3>Psicosis</h3>
+              <p>El clásico que cambió para siempre la forma de construir miedo.</p>
+            </div>
+          </a>
+
+          <a class="feature-card" href="peliculainfo.html?pelicula=seven">
+            <img src="img/sevenfigure.jpg" alt="Seven">
+            <div>
+              <span class="movie-time">20:30</span>
+              <h3>Seven</h3>
+              <p>Crimen moral, ciudad oscura y un final que sigue incomodando.</p>
+            </div>
+          </a>
         </div>
       </div>
     </section>
